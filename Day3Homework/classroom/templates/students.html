@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+
+    <style>
+
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: royalblue;
+            /* text-decoration: underline; */
+            font-weight: lighter;
+        }
+
+        h3 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(0, 85, 170);
+        }
+
+        #pass {
+            color: green;
+        }
+
+        #fail {
+            color: red;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Students</h1>
+    
+    {% for s in stu %}
+
+    <h2>    {{ s.name }}</h2>
+    <h3>Grade: {{ s.grade }}</h3>
+
+    {% if s.res == 'Passed' %}
+        
+        <h3 id="pass">Passed</h3><br>
+
+    {% elif s.res == 'Failed' %}
+        
+        <h3 id="fail">Failed</h3><br>
+
+    {% else %}
+
+        <h3>No students found</h3><br>
+
+    {% endif %}
+
+    {% endfor %}
+
+</body>
+</html>
+
+<!-- 
+Create a web page in Django that shows a list of students in a classroom. Each student has a name, grade, and whether they passed.
+
+The page should:
+
+Display each student’s name and grade using a loop.
+
+Show a different message depending on whether they passed or not (example: "Passed" in green or "Failed" in red).
+
+If the list is empty, show a message saying “No students found.”
+
+Use some simple CSS for styling. -->
